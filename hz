@@ -6,14 +6,13 @@ proxies:
 - {name: puniTrojan, server: puni.letitbe.ink, port: 443, type: trojan, password: 3c266fd3-5f9f-4132-90ac-c33a2a316cb5, sni: puni.letitbe.ink}
 - {name: pinkws, server: pink.letitbe.ink, port: 443, type: vmess, uuid: 3c266fd3-5f9f-4132-90ac-c33a2a316cb5, alterId: 0, cipher: auto, tls: true, servername: pink.letitbe.ink, network: ws, ws-opts: {path: /pokocatvws, headers: {Host: pink.letitbe.ink}}}
 - {name: pinkTrojan, server: pink.letitbe.ink, port: 443, type: trojan, password: 3c266fd3-5f9f-4132-90ac-c33a2a316cb5, sni: pink.letitbe.ink}
-- {name: prosvet, server: prosvet.letitbe.ink, password: 53ca955d89, port: 443, type: trojan, network: ws, sni: prosvet.letitbe.ink, ws-opts: {path: /d619b76a, headers: {Host: prosvet.letitbe.ink}}}
 
  
 
 
 
 proxy-groups:
-- { name: "Load", type: load-balance, proxies: [ 'prosvet', 'pinkws', 'pinkTrojan', 'premosaws', 'premosaTrojan', 'puniws', 'puniTrojan' ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
+- { name: "Load", type: load-balance, proxies: [ 'pinkws', 'pinkTrojan', 'premosaws', 'premosaTrojan', 'puniws', 'puniTrojan' ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
 
 rules:
  - GEOIP, CN, DIRECT
