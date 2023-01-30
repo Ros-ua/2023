@@ -4,12 +4,11 @@ proxies:
 - {name: premosaTrojan, server: premosa.letitbe.ink, port: 443, type: trojan, password: 3c266fd3-5f9f-4132-90ac-c33a2a316cb5, sni: premosa.letitbe.ink}
 - {name: plum, server: plum.letitbe.ink, password: 13b1eeb565, port: 443, type: trojan, network: ws, sni: plum.letitbe.ink, ws-opts: {path: /5d9f2103, headers: {Host: plum.letitbe.ink}}}
 - {name: chaseyourdream, server: chaseyourdream.letitbe.ink, password: 8c89999159, port: 443, type: trojan, network: ws, sni: chaseyourdream.letitbe.ink, ws-opts: {path: /7300e8b7, headers: {Host: chaseyourdream.letitbe.ink}}}
-- {name: somethinggood, server: somethinggood.letitbe.ink, password: 0ea2efd44d, port: 443, type: trojan, network: ws, sni: somethinggood.letitbe.ink, ws-opts: {path: /e3bf15bf, headers: {Host: somethinggood.letitbe.ink}}}
 
 
 
 proxy-groups:
-- { name: "Load", type: load-balance, proxies: [ 'chaseyourdream', 'somethinggood',  'plum',  'premosaws', 'premosaTrojan',  ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
+- { name: "Load", type: load-balance, proxies: [ 'chaseyourdream', 'plum',  'premosaws', 'premosaTrojan',  ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
 
 rules:
  - GEOIP, CN, DIRECT
