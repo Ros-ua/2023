@@ -1,4 +1,4 @@
-mode: global
+mode: rule
 
 dns:
   enable: true
