@@ -16,7 +16,7 @@ proxies:
 
 
 proxy-groups:
-- { name: "Load", type: load-balance, proxies: [ 'chaseyourdream', 'premosaws', 'premosaTrojan',  ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
+- { name: Load, type: load-balance, proxies: [ 'chaseyourdream', 'premosaws', 'premosaTrojan',  ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
 
 rules:
  - GEOIP, CN, DIRECT
