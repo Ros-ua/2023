@@ -13,13 +13,11 @@ proxies:
 - {name: premosaTrojan, server: premosa.letitbe.ink, port: 443, type: trojan, password: 3c266fd3-5f9f-4132-90ac-c33a2a316cb5, sni: premosa.letitbe.ink}
 - {name: plum, server: plum.letitbe.ink, password: 13b1eeb565, port: 443, type: trojan, network: ws, sni: plum.letitbe.ink, ws-opts: {path: /5d9f2103, headers: {Host: plum.letitbe.ink}}}
 - {name: chaseyourdream, server: chaseyourdream.letitbe.ink, password: 8c89999159, port: 443, type: trojan, network: ws, sni: chaseyourdream.letitbe.ink, ws-opts: {path: /7300e8b7, headers: {Host: chaseyourdream.letitbe.ink}}}
-- {name: gloryTrojan, type: trojan, password: fcaba0072163428b95b9cde853a2068583c31ef9c0f5a12f189e8c9e96acf021, port: 443, server: glory.letitbe.ink, network: ws, sni: glory.letitbe.ink, skip-cert-verify: false, udp: true, ws-opts: {path: "/dadd875d-cd73-419b-aac2-57ab71af4b90/62dac09515dd986b47d145b0efceac86", headers: {Host: glory.letitbe.ink}}}
-- {name: gloryws, type: ss, server: glory.letitbe.ink, port: 443, cipher: chacha20-ietf-poly1305, password: 44c15e7108a11c338024843cc1bb5d6b0b8ed85922a4dd8f22b208199dce80cd, plugin: v2ray-plugin, plugin-opts: { mode: websocket, tls: true, skip-cert-verify: false, host: glory.letitbe.ink, path: "/dadd875d-cd73-419b-aac2-57ab71af4b90/6d63c54b51d8b6b5be020d0d9058aef1", mux: 8}}    
 
 
 
 proxy-groups:
-- { name: "Load", type: load-balance, proxies: [ 'gloryTrojan', 'gloryws', 'chaseyourdream', 'plum',  'premosaws', 'premosaTrojan',  ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
+- { name: "Load", type: load-balance, proxies: [ 'chaseyourdream', 'plum',  'premosaws', 'premosaTrojan',  ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
 
 rules:
  - GEOIP, CN, DIRECT
