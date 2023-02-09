@@ -1,19 +1,8 @@
-dns:
-  enable: true
-  listen: 0.0.0.0:53
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  nameserver:
-    - 4.2.2.4
-    - 8.8.8.8
-
 proxies:
 
 - {name: premosaws, server: premosa.letitbe.ink, port: 443, type: vmess, uuid: 3c266fd3-5f9f-4132-90ac-c33a2a316cb5, alterId: 0, cipher: auto, tls: true, servername: premosa.letitbe.ink, network: ws, ws-opts: {path: /pokocatvws, headers: {Host: premosa.letitbe.ink}}}
 - {name: premosaTrojan, server: premosa.letitbe.ink, port: 443, type: trojan, password: 3c266fd3-5f9f-4132-90ac-c33a2a316cb5, sni: premosa.letitbe.ink}
 - {name: chaseyourdream, server: chaseyourdream.letitbe.ink, password: 8c89999159, port: 443, type: trojan, network: ws, sni: chaseyourdream.letitbe.ink, ws-opts: {path: /7300e8b7, headers: {Host: chaseyourdream.letitbe.ink}}}
-
-
 
 proxy-groups:
 - { name: Load, type: load-balance, proxies: [ 'chaseyourdream', 'premosaws', 'premosaTrojan',  ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
