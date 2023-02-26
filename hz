@@ -2,10 +2,10 @@ proxies:
 
 - {name: chaseyourdream, server: chaseyourdream.letitbe.ink, password: 8c89999159, port: 443, type: trojan, network: ws, sni: chaseyourdream.letitbe.ink, ws-opts: {path: /7300e8b7, headers: {Host: chaseyourdream.letitbe.ink}}}
 - {name: fox, server: fox.letitbe.ink, password: a0808593ee, port: 443, type: trojan, network: ws, sni: fox.letitbe.ink, ws-opts: {path: /bf93db0f, headers: {Host: fox.letitbe.ink}}}
-- {name: right, type: trojan, password: 305d755677f27c94475afd83d11bc2aaf99acefb4d3af532848451c2a1bae218,  port: 443,  server: right.letitbe.ink, network: ws, sni: right.letitbe.ink, skip-cert-verify: false, udp: true, ws-opts: { path: "/f4133979-0669-43ef-9e5c-b84f1e170cd2/4c63d8e7e93aff3ea293b21369bcc159", headers: {Host: right.letitbe.ink}}}
+- {name: nice, type: trojan, password: 824396bfb5c2b192bcaed7cf0ae45834a0b5b7cade97d1c602595fafc56e175d,  port: 443,  server: nice.letitbe.ink, network: ws, sni: nice.letitbe.ink, skip-cert-verify: false, udp: true, ws-opts: { path: "/4664b63b-e373-43fa-b0d9-e2a6c8c83fd1/79fba7596a58be328e2803ac3927dd40", headers: {Host: nice.letitbe.ink}}}
 
 proxy-groups:
-- { name: Load, type: load-balance, proxies: [  'right', 'fox', 'chaseyourdream' ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
+- { name: Load, type: load-balance, proxies: [  'nice', 'fox', 'chaseyourdream' ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
 
 rules:
  - GEOIP, CN, DIRECT
