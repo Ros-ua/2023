@@ -2,9 +2,10 @@ proxies:
 
 - {name: good, server: good.letitbe.ink, password: 0042c9bb38, port: 443, type: trojan, network: ws, sni: good.letitbe.ink, ws-opts: {path: /2a809a52, headers: {Host: good.letitbe.ink}}}
 - {name: fox, server: fox.letitbe.ink, password: a0808593ee, port: 443, type: trojan, network: ws, sni: fox.letitbe.ink, ws-opts: {path: /bf93db0f, headers: {Host: fox.letitbe.ink}}}
+- {name: boy, type: trojan, password: ce904a6c72e6641f904c002537ea81b2a36decb58c3f9572a9f75e6972f8854e, port: 443, server: slave.letitbe.ink, network: ws, sni: slave.letitbe.ink, skip-cert-verify: false, udp: true, ws-opts: { path: "/2f043c32-8e72-494b-aca4-b26c46157a9c/48709f1fbb6df78360f5460aa788af1d", headers: {Host: slave.letitbe.ink}}}
 
 proxy-groups:
-- { name: Load, type: load-balance, proxies: [ 'good', 'fox' ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
+- { name: Load, type: load-balance, proxies: [ 'boy', 'good', 'fox' ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
 
 rules:
  - GEOIP, CN, DIRECT
