@@ -1,7 +1,7 @@
 proxies:
 
 - {name: good, server: good.letitbe.ink, password: 0042c9bb38, port: 443, type: trojan, network: ws, sni: good.letitbe.ink, ws-opts: {path: /2a809a52, headers: {Host: good.letitbe.ink}}}
-- {name: tiger, server: tiger.letitbe.ink, password: bb2559e0dc, port: 443, type: trojan, network: ws, sni: tiger.letitbe.ink, ws-opts: {path: /905f96d4, headers: {Host: tiger.letitbe.ink}}}
+- {name: tiger, server: tiger.letitbe.ink, password: 2c41cba870, port: 443, type: trojan, network: ws, sni: tiger.letitbe.ink, ws-opts: {path: /443a954d, headers: {Host: tiger.letitbe.ink}}}
 - {name: boy, type: trojan, password: ce904a6c72e6641f904c002537ea81b2a36decb58c3f9572a9f75e6972f8854e, port: 443, server: slave.letitbe.ink, network: ws, sni: slave.letitbe.ink, skip-cert-verify: false, udp: true, ws-opts: { path: "/2f043c32-8e72-494b-aca4-b26c46157a9c/48709f1fbb6df78360f5460aa788af1d", headers: {Host: slave.letitbe.ink}}}
 
 proxy-groups:
