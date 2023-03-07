@@ -3,13 +3,11 @@ proxies:
 - {name: good, server: good.letitbe.ink, password: 0042c9bb38, port: 443, type: trojan, network: ws, sni: good.letitbe.ink, ws-opts: {path: /2a809a52, headers: {Host: good.letitbe.ink}}}
 
 - {name: boy, type: trojan, password: 4635e20a1fc83c92e0dcaadfafbe47e7ce4cc7decbd948023b2558ba83511f64, port: 443, server: slave.letitbe.ink, network: ws, sni: slave.letitbe.ink, skip-cert-verify: false, udp: true, ws-opts: { path: "/2c1a20ae-f0f0-4d99-b260-99b76b56e429/27bc7aa26dac5f2d37f8b043def5a850", headers: {Host: slave.letitbe.ink}}}
-- {name: alison, type: trojan, password: f22abf885175c39584cf02c8672140ebf792a8b52b8abed12d680702979c83a1, port: 443, server: alison.letitbe.ink, network: ws, sni: alison.letitbe.ink, skip-cert-verify: false, udp: true, ws-opts: { path: "/84adff58-5aa7-4292-ae15-5c8b4dd6a75a/ad5b7192230a04adf62d63385ea3cf01", headers: {Host: alison.letitbe.ink}}}
 - {name: tree, type: trojan, password: fafe356bf16d84ad574854a7c58c1bc7b30fddaab4db68bd1b46471b10050841, port: 443, server: tree.letitbe.ink, network: ws, sni: tree.letitbe.ink, skip-cert-verify: false, udp: true, ws-opts: { path: "/d8e1e760-fc59-4a6b-8bd0-ff7406e6d8f3/47c9a2ffb803f40cabc1a1d8dcd66974", headers: {Host: tree.letitbe.ink}}}
-- {name: Warsaw, type: trojan, password: 930e8778b93b73cf37c588a36ada74dab24be2a1e9dfcacb361df4d302059cbd, port: 443, server: kurwa.letitbe.ink, network: ws, sni: kurwa.letitbe.ink, skip-cert-verify: false, udp: true, ws-opts: { path: "/4820d965-7481-42fa-9222-dad2103834b4/49c34154de85ec2fb7bd1951e1921acf", headers: {Host: kurwa.letitbe.ink}}}
 
 
 proxy-groups:
-- { name: Load, type: load-balance, proxies: [ 'tree', 'alison', 'boy', 'good', 'Warsaw' ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
+- { name: Load, type: load-balance, proxies: [ 'tree', 'boy', 'good' ], url: 'http://www.gstatic.com/generate_204', interval: 150, strategy: round-robin }
 
 rules:
  - GEOIP, CN, DIRECT
